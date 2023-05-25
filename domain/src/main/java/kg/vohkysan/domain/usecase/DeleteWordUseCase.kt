@@ -4,7 +4,7 @@ import kg.vohkysan.domain.repository.WordRepository
 
 class DeleteWordUseCase(private val wordRepository: WordRepository) {
 
-    fun execute(){
+    fun execute() {
         wordRepository.deleteAllWords()
     }
 }

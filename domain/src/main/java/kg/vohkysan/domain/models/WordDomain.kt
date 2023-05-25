@@ -1,4 +1,4 @@
 package kg.vohkysan.domain.models
 
-class WordDomain(val name :String) {
+class WordDomain(val name: String) {
 }

@@ -24,7 +24,7 @@ class DomainModule {
     }
 
     @Provides
-    fun provideDeleteWordUseCase(wordRepository: WordRepository): DeleteWordUseCase{
+    fun provideDeleteWordUseCase(wordRepository: WordRepository): DeleteWordUseCase {
         return DeleteWordUseCase(wordRepository = wordRepository)
     }
 }

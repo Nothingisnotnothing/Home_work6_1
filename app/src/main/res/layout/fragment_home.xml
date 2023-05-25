@@ -25,22 +25,21 @@
         android:id="@+id/btn_next_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_8"
         android:text="@string/next_fragment" />
 
     <Button
         android:id="@+id/btn_delete_all"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_8"
         android:text="@string/delete_all" />
 
     <TextView
         android:id="@+id/tv_test_observe"
-        tools:text="Text is test"
-        android:textSize="28sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:textSize="@dimen/text_28"
+        tools:text="Text is test" />
 
 </LinearLayout>

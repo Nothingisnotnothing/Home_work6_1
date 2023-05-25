@@ -19,13 +19,13 @@ import kg.vohkysan.home_work6_1.databinding.FragmentHomeBinding
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
-    private val homeViewModel:HomeViewModel by viewModels()
+    private val homeViewModel: HomeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(inflater,container,false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -35,17 +35,17 @@ class HomeFragment : Fragment() {
     }
 
     private fun init() {
-        with(binding){
-            homeViewModel.resultLive.observe(viewLifecycleOwner){
+        with(binding) {
+            homeViewModel.resultLive.observe(viewLifecycleOwner) {
                 etWord.setText(homeViewModel.load())
             }
             btnDeleteAll.setOnClickListener {
                 homeViewModel.delete()
             }
             btnNextFragment.setOnClickListener {
-                if (etWord.text?.isEmpty() == true){
+                if (etWord.text?.isEmpty() == true) {
                     Toast.makeText(context, "Edit text is empty", Toast.LENGTH_SHORT).show()
-                } else{
+                } else {
                     val word = etWord.text.toString()
                     homeViewModel.save(word)
                     findNavController().navigate(R.id.navigation_result)

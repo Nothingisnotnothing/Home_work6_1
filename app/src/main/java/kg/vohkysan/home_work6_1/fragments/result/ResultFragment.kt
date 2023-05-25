@@ -35,9 +35,9 @@ class ResultFragment : Fragment() {
     private fun init() {
         with(binding) {
             etWord.setText(resultViewModel.load())
-            if (etWord.text?.isEmpty() == true){
+            if (etWord.text?.isEmpty() == true) {
                 Toast.makeText(context, "Edit text is empty", Toast.LENGTH_SHORT).show()
-            } else{
+            } else {
                 btnPrevFragment.setOnClickListener {
                     val word = etWord.text.toString()
                     resultViewModel.save(word)

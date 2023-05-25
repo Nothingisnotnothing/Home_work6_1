@@ -26,12 +26,12 @@ class HomeViewModel @Inject constructor(
         resultMutableLive.value = resultData.toString()
     }
 
-    fun load() : String {
+    fun load(): String {
         val wordDomain: WordDomain? = getWordUseCase.execute()
         return wordDomain?.name.toString()
     }
 
-    fun delete(){
+    fun delete() {
         deleteWordUseCase.execute()
     }
 }

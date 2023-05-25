@@ -25,7 +25,7 @@
         android:id="@+id/btn_prev_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_top_8"
         android:text="@string/previous_fragment" />
 
 
