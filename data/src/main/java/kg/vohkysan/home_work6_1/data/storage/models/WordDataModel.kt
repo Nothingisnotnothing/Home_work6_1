@@ -3,11 +3,11 @@ package kg.vohkysan.home_work6_1.data.storage.models
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kg.vohkysan.home_work6_1.data.storage.models.WordData.Companion.TABLE_NAME
+import kg.vohkysan.home_work6_1.data.storage.models.WordDataModel.Companion.TABLE_NAME
 import java.io.Serializable
 
 @Entity(tableName = TABLE_NAME)
-data class WordData(
+data class WordDataModel(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "word_id")
     val id: Int? = null,

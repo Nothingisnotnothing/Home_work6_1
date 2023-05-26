@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kg.vohkysan.domain.models.WordDomain
+import kg.vohkysan.domain.models.WordDomainModel
 import kg.vohkysan.domain.usecase.GetWordUseCase
 import kg.vohkysan.domain.usecase.SaveWordUseCase
 import javax.inject.Inject
@@ -19,13 +19,13 @@ class ResultViewModel @Inject constructor(
     val resultLive: LiveData<String> = resultMutableLive
 
     fun save(text: String) {
-        val wordDomain = WordDomain(name = text)
+        val wordDomain = WordDomainModel(name = text)
         val resultData = saveWordUseCase.execute(wordDomain = wordDomain)
         resultMutableLive.value = resultData.toString()
     }
 
     fun load(): String {
-        val wordDomain: WordDomain? = getWordUseCase.execute()
+        val wordDomain: WordDomainModel? = getWordUseCase.execute()
         return wordDomain?.name.toString()
     }
 }

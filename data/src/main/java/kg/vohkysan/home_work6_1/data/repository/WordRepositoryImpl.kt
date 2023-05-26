@@ -1,17 +1,17 @@
 package kg.vohkysan.home_work6_1.data.repository
 
-import kg.vohkysan.domain.models.WordDomain
+import kg.vohkysan.domain.models.WordDomainModel
 import kg.vohkysan.domain.repository.WordRepository
 import kg.vohkysan.home_work6_1.data.storage.db.AppDataBase
-import kg.vohkysan.home_work6_1.data.storage.models.WordData
+import kg.vohkysan.home_work6_1.data.storage.models.WordDataModel
 
 class WordRepositoryImpl(private val appDataBase: AppDataBase) : WordRepository {
-    override fun saveWord(wordDomain: WordDomain) {
+    override fun saveWord(wordDomain: WordDomainModel) {
         val wordData = mapToStorage(wordDomain)
         appDataBase.wordDao().addWord(wordData)
     }
 
-    override fun getWord(): WordDomain? {
+    override fun getWord(): WordDomainModel? {
         val wordData = appDataBase.wordDao().getWord()
         return mapToDomain(wordData)
     }
@@ -20,11 +20,11 @@ class WordRepositoryImpl(private val appDataBase: AppDataBase) : WordRepository 
         appDataBase.wordDao().deleteAll()
     }
 
-    private fun mapToStorage(wordDomain: WordDomain): WordData {
-        return WordData(name = wordDomain.name)
+    private fun mapToStorage(wordDomain: WordDomainModel): WordDataModel {
+        return WordDataModel(name = wordDomain.name)
     }
 
-    private fun mapToDomain(wordData: WordData): WordDomain? {
-        return wordData.name?.let { WordDomain(it) }
+    private fun mapToDomain(wordData: WordDataModel): WordDomainModel? {
+        return wordData.name?.let { WordDomainModel(it) }
     }
 }
